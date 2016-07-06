@@ -1,12 +1,14 @@
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Client Authentication Example</title>
     <link type="text/css" rel="stylesheet"
-          href="/bootstrap/css/bootstrap.min.css" />
-    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.3.min.js"></script>
+          href="bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="bootstrap/js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript"
-            src="/bootstrap/js/bootstrap.min.js"></script>
+            src="bootstrap/js/bootstrap.min.js"></script>
     <script>
         function authenticate() {
             var appID = "bankid";

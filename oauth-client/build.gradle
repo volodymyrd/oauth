@@ -22,7 +22,7 @@ war {
 dependencies {    
 	compile libs.javax
 	compile libs.spring_boot_web
-	compile libs.spring_boot_security
+	//compile libs.spring_boot_security
 	testCompile libs.test    
 	providedRuntime libs.tomcat_embed
 }

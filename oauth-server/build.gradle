@@ -17,19 +17,27 @@ apply plugin: 'war'
 
 war {
     version = '0.0.1'
+    rootSpec.exclude("**/tomcat*.jar")
+}
+
+configurations {
+    providedRuntime
 }
 
 dependencies {
-    compile libs.javax
-    compile libs.spring_boot_web
-    compile libs.spring_boot_security
+    compile libs.jstl
+    compile(libs.spring_boot_web) {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-validation'
+    }
     compile libs.spring_security_oauth2
-
-    compile libs.spring_boot_jpa
-    compile libs.database_hsqldb
+    compile(libs.spring_security_taglibs) {
+        exclude group: 'org.springframework.security', module: 'spring-security-acl'
+    }
 
     testCompile libs.test
-    providedRuntime libs.tomcat_embed
+
+    compile libs.tomcat_embed
 }
 
 springBoot {
