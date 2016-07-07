@@ -19,12 +19,10 @@ war {
 	version = '0.0.1'
 }
 
-dependencies {    
-	compile libs.javax
+dependencies {
+	compile libs.jstl
 	compile libs.spring_boot_web
-	//compile libs.spring_boot_security
-	testCompile libs.test    
-	providedRuntime libs.tomcat_embed
+	testCompile libs.test
 }
 
 springBoot {
