@@ -74,7 +74,7 @@
             });
         }
     });
-    <!--spring-projects/spring-security-oauth-->
+    <!--https://github.com/spring-projects/spring-security-oauth/tree/master/samples/oauth2/sparklr-->
 </script>
 </body>
 </html>
