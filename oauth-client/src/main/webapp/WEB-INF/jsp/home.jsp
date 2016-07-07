@@ -74,6 +74,7 @@
             });
         }
     });
+    <!--spring-projects/spring-security-oauth-->
 </script>
 </body>
 </html>
