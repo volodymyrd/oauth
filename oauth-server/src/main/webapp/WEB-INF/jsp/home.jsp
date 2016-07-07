@@ -32,10 +32,6 @@
                 'headers' : headers,
                 dataType : 'text'
             });
-            $.get('photos/user/message', function(data) {
-                console.log('data:' + data);
-                $('#message').text(data);
-            });
         }
         $(function() {
             if (window.location.hash.length == 0) {
@@ -52,7 +48,25 @@
 <div id="content">
     <p>Once you have authenticated and approved the access, some
         JavaScript in this page will render a message from Sparklr below</p>
-    <p id="message" />
 </div>
+
+"${pageContext.request.userPrincipal.name}"
+
+<c:if test="${not empty pageContext.request.userPrincipal.name}">
+    <a href="javascript:formSubmit()">logout</a>
+</c:if>
+
+<c:url value="/logout" var="logoutUrl" />
+<form action="${logoutUrl}" method="post" id="logoutForm">
+    <input type="hidden" name="${_csrf.parameterName}"
+           value="${_csrf.token}" />
+</form>
+
+<script>
+    function formSubmit() {
+        console.log('logout');
+        document.getElementById("logoutForm").submit();
+    }
+</script>
 </body>
 </html>
