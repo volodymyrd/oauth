@@ -24,7 +24,7 @@
         var appID = "bankid";
         var path = 'http://localhost:8081/oauth/authorize?';
         var queryParams = ['client_id=' + appID,
-            'redirect_uri=localhost:8081', 'scope=trust',
+            'redirect_uri=' + window.location, 'scope=trust',
             'response_type=token'];
         var query = queryParams.join('&');
         var url = path + query;
