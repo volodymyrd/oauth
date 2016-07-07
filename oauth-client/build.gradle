@@ -23,8 +23,10 @@ dependencies {
 	compile libs.jstl
 	compile libs.spring_boot_web
 	testCompile libs.test
+
+	compile libs.tomcat_embed
 }
 
 springBoot {
-	mainClass = 'com.gmail.volodymyrdotsenko.oauth.client.Application'
+	mainClass = 'com.gmail.volodymyrdotsenko.oauth.client.ClientApplication'
 }

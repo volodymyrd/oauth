@@ -9,14 +9,14 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @ComponentScan(basePackages = "com.gmail.volodymyrdotsenko.oauth.client")
-public class Application extends SpringBootServletInitializer {
+public class ClientApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
+        return application.sources(ClientApplication.class);
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(ClientApplication.class, args);
     }
 }
