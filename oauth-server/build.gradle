@@ -36,6 +36,7 @@ dependencies {
     }
 
     testCompile libs.test
+    testCompile libs.spring_boot_test
 
     compile libs.tomcat_embed
 }
