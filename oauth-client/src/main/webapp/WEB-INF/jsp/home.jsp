@@ -16,7 +16,7 @@
 <div id="content">
     <button id="oauthloginId">Login via my company</button>
 
-    <button id="getTokenId">Get token</button>
+    <button id="getTokenId">Get info</button>
 </div>
 
 <script>
@@ -35,10 +35,10 @@
         $.ajax({
             url: 'http://localhost:8081/oauth/token',
             type: 'POST',
-            data : 'grant_type=password&scope=trust&username=admin&password=admin',
+            data: 'grant_type=password&scope=trust&username=admin&password=admin',
             username: 'bankid',
             password: 'secret',
-            xhrFields: { withCredentials: true },
+            xhrFields: {withCredentials: true},
             //dataType : 'text',
             success: function (data, jqXHR) {
                 if (window.console)
@@ -52,6 +52,27 @@
                 }
             }
         });
+    });
+
+    $(function () {
+        var url = window.location;
+        console.log(url);
+        if (url.hash) {
+            var accessToken = url.hash.split('&')[0].split("=")[1];
+            console.log('access-token:' + accessToken);
+            var headers = {
+                'Authorization' : 'Bearer ' + accessToken,
+                'Accept' : 'application/json'
+            };
+            $.ajaxSetup({
+                'headers' : headers,
+                dataType : 'text'
+            });
+            $.get('photos/user/message', function(data) {
+                console.log('data:' + data);
+                $('#message').text(data);
+            });
+        }
     });
 </script>
 </body>
