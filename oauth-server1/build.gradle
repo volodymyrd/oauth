@@ -1,28 +1,29 @@
 apply plugin: 'war'
 
 war {
-    version = '0.0.1'
-    classpath = classpath.filter { File file ->
-        return !(file.name.contains("javax.servlet-api"))
-    }
+	version = '0.0.1'
+	classpath = classpath.filter { File file ->
+		return !(file.name.contains("javax.servlet-api"))
+	}
 }
 
 configurations {
-    providedRuntime
+	providedRuntime
 }
 
 dependencies {
-    compile libs.spring_web
-    compile libs.spring_webmvc
-    compile libs.spring_security_oauth2
-    compile(libs.spring_security_taglibs) {
-        exclude group: 'org.springframework.security', module: 'spring-security-acl'
-    }
-    compile libs.fasterxml
-    compile libs.jstl
+	compile libs.spring_web
+	compile libs.spring_webmvc
+	compile libs.jstl
+	compile libs.fasterxml
 
-    testCompile libs.test
-    testCompile libs.spring_test
+	compile libs.spring_security_oauth2
+	compile(libs.spring_security_taglibs) {
+		exclude group: 'org.springframework.security', module: 'spring-security-acl'
+	}
 
-    compile libs.servlet
+	testCompile libs.test
+	testCompile libs.spring_test
+
+	compile libs.servlet
 }

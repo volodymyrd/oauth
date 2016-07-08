@@ -3,9 +3,6 @@ package com.gmail.volodymyrdotsenko.oauth.server.web;
 /**
  * Created by Volodymyr Dotsenko on 06.07.16.
  */
-import java.security.Principal;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.common.util.OAuth2Utils;
@@ -19,6 +16,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.security.Principal;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Controller
 @SessionAttributes("authorizationRequest")

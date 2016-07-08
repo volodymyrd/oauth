@@ -1,4 +1,4 @@
 rootProject.name = 'oauth'
-include 'oauth-server'
+//include 'oauth-server'
 include 'oauth-server1'
 include 'oauth-client'
